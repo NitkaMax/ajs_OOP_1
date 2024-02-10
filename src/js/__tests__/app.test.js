@@ -1,34 +1,34 @@
 import Character from '../character.js';
-import Bowsmen from '../bowsman.js';
+import Bowsman from '../bowsman.js';
 import Deamon from '../deamon.js';
 import Mage from '../mage.js';
-import Swordsman from '../swordman.js';
+import Swordsman from '../swordsman.js';
 import Undead from '../undead.js';
 import Zombie from '../zombie.js';
 
 test('Invalid name -> too short', () => {
     expect(
-        () => new Character('Cringe', 'Archibald', 100, 100),
+        () => new Character('O', 'Bowsman', 100, 100),
     ).toThrow('Invalid name length');
 });
 
 test('Invalid name -> too long', () => {
     expect(
-        () => new Character('Dambldore', 'Daemon', 100, 100),
+        () => new Character('LooooooongName', 'Daemon', 100, 100),
     ).toThrow('Invalid name length');
 });
 
 test('Invalid character type', () => {
     expect(
-        () => new Character('Archibald', 'FakeBowman', 100, 100),
+        () => new Character('Bowy', 'FakeBowsman', 100, 100),
     ).toThrow('Invalid character type');
 });
 
-test('Bowsmen', () => {
-    const bowsman = new Bowsmen('Archibald');
+test('Bowsman', () => {
+    const bowsman = new Bowsman('GreenArrow');
     expect(bowsman).toEqual({
-        name: 'Archibald',
-        type: 'Bowsmen',
+        name: 'GreenArrow',
+        type: 'Bowsman',
         health: 100,
         level: 1,
         attack: 25,
@@ -43,20 +43,20 @@ test('Deamon', () => {
         type: 'Deamon',
         health: 100,
         level: 1,
-        attack: 20,
+        attack: 10,
         defence: 40,
     });
 });
 
 test('Mage', () => {
-    const mage = new Mage('Girmiona');
+    const mage = new Mage('Cristal');
     expect(mage).toEqual({
-        name: 'Girmiona',
-        type: 'Magician',
+        name: 'Cristal',
+        type: 'Mage',
         health: 100,
         level: 1,
         attack: 10,
-        defence: 20,
+        defence: 40,
     });
 });
 
@@ -67,15 +67,15 @@ test('Swordsman', () => {
         type: 'Swordsman',
         health: 100,
         level: 1,
-        attack: 30,
-        defence: 50,
+        attack: 40,
+        defence: 10,
     });
 });
 
 test('Undead', () => {
-    const undead = new Undead('Undieng');
+    const undead = new Undead('Death');
     expect(undead).toEqual({
-        name: 'Undieng',
+        name: 'Death',
         type: 'Undead',
         health: 100,
         level: 1,
@@ -85,13 +85,13 @@ test('Undead', () => {
 });
 
 test('Zombie', () => {
-    const zombie = new Zombie('Cranberies');
+    const zombie = new Zombie('Cranby');
     expect(zombie).toEqual({
-        name: 'Cranberies',
+        name: 'Cranby',
         type: 'Zombie',
         health: 100,
         level: 1,
-        attack: 30,
-        defence: 15,
+        attack: 40,
+        defence: 10,
     });
 });

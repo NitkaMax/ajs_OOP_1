@@ -1,5 +1,5 @@
 const types = [
-    'Archer', 'Swordman', 'Mage', 'Daemon', 'Undead', 'Zombie',
+    'Bowsman', 'Swordsman', 'Mage', 'Deamon', 'Undead', 'Zombie',
 ];
 
 export default class Character {
